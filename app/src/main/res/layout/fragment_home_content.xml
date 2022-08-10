@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/homeContentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        android:clipChildren="false"
+        android:orientation="vertical">
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/homeContentSmartRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.example.leagueoftbcoupon.view.HomeNestedScrollView
+                android:id="@+id/homeContentNested"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.example.leagueoftbcoupon.view.IndicationLayout
+                        android:id="@+id/homeContentViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:clipChildren="false" />
+
+                    <include
+                        android:id="@+id/homeContentTitleLayout"
+                        layout="@layout/include_home_content_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/homeContentRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:overScrollMode="never" />
+
+                </LinearLayout>
+            </com.example.leagueoftbcoupon.view.HomeNestedScrollView>
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+    </LinearLayout>
+</layout>

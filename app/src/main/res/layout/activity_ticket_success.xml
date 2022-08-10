@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shenben="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="ticketData"
+            type="com.example.leagueoftbcoupon.domain.dataBean.TicketDataBean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.TicketActivity">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/ticketCoverIv"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="center"
+                shenben:ticketCover="@{ticketData.cover}" />
+
+            <TextView
+                android:id="@+id/ticketTitleTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ticketCoverIv"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@{ticketData.title}"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ticketTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥GQaS2lWArAz￥"
+                android:layout_below="@id/ticketTitleTv"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:background="@drawable/shape_ticket_tick"
+                android:layout_marginBottom="20dp"/>
+
+            <Button
+                android:id="@+id/toTaobaoOrPasteTicketBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ticketTv"
+                android:layout_centerHorizontal="true"
+               android:text="复制口令到粘贴板"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:background="@drawable/shape_ticket_cover"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

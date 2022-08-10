@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LabelView">
+        <attr name="mText" format="string" />
+        <attr name="mBackgroundColor" format="integer" />
+        <attr name="mTextColor" format="integer" />
+        <attr name="textSize" format="integer"/>
+    </declare-styleable>
+</resources>

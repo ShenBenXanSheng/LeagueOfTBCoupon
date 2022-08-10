@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/shop_Search"
+        android:icon="@mipmap/icon_sousuo"
+        android:title="搜索"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/shop_delete"
+        android:title="清除"
+        android:icon="@mipmap/clear_all"
+        app:showAsAction="ifRoom" />
+</menu>

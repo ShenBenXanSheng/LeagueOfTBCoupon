@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shenhen="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="selectedData"
+            type="com.example.leagueoftbcoupon.domain.dataBean.SelectedDataBean" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/selectedDataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/gray"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/selectedCoverIv"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+
+                android:src="@mipmap/paimeng"
+                shenhen:selected_cover="@{selectedData.pictUrl}" />
+
+            <com.example.leagueoftbcoupon.view.LabelView
+                android:id="@+id/selectedCouponLv"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignEnd="@id/selectedCoverIv"
+                android:paddingLeft="25dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp"
+                app:mBackgroundColor="@color/red"
+                app:mTextColor="@color/white" />
+
+            <TextView
+                android:id="@+id/selectedTitleTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/selectedCoverIv"
+                android:layout_marginTop="10dp"
+                android:text="@{selectedData.title}"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/selectedTitleTv"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/selectedBeforePriceTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_centerVertical="true"
+                    android:text="@{selectedData.zkFinalPrice}"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp" />
+                <Button
+                    android:id="@+id/zhandi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_selected_shop_bt"
+                    android:text="领券购买"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:visibility="invisible"
+                    android:textSize="16sp" />
+                <Button
+                    android:layout_toRightOf="@id/zhandi"
+                    android:id="@+id/selectedShopBt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_selected_shop_bt"
+                    android:text="领券购买"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shenben="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="onSellData"
+            type="com.example.leagueoftbcoupon.domain.dataBean.OnSellDataBean" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/itemOnSellDataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/itemOnSellCoverIv"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@mipmap/paimeng"
+                android:layout_gravity="center"
+               android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_margin="3dp"
+                android:layout_marginBottom="10dp"
+                shenben:on_sell_cover="@{onSellData.cover}"/>
+
+            <TextView
+                android:id="@+id/itemOnSellTitleTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{onSellData.title}"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="14sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp">
+                <TextView
+                    android:id="@+id/itemOnSellBeforePriceTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   shenben:on_sell_before_price="@{onSellData.beforePrice}"
+                    android:textSize="12sp"
+                    android:textColor="@color/red"/>
+
+                <TextView
+                    android:id="@+id/itemOnSellAfterPriceTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{onSellData.afterPrice}"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/red"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

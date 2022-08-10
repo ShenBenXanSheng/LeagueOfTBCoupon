@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.ShopCarActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/shopCarToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/midBlue"
+            app:navigationIcon="@mipmap/back"
+            app:title="购物车"
+            app:menu="@menu/menu_shop_car"
+            app:titleTextColor="@color/white" />
+
+        <FrameLayout
+            android:id="@+id/activityContentContainerFl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</layout>

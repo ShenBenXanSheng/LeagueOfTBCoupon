@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shenben="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="contentData"
+            type="com.example.leagueoftbcoupon.domain.dataBean.HomeContentData" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/homeItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:elevation="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="4dp"
+                android:src="@mipmap/paimeng"
+                shenben:cover="@{contentData.cover}"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp">
+
+                <TextView
+                    android:id="@+id/homeItemTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{contentData.title}"
+
+                    android:textSize="12sp"
+                   />
+
+                <TextView
+                    android:id="@+id/homeItemCoupon"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{contentData.coupon}"
+                    android:textSize="14sp"
+                    android:layout_below="@id/homeItemTitle"
+                    android:background="#ff0000"
+                    android:textColor="#FFD700" />
+
+                <LinearLayout
+                    android:layout_below="@+id/homeItemCoupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/homeItemAfterPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#ff0000"
+                        android:text="@{contentData.afterPrice}" />
+
+                    <TextView
+                        android:id="@+id/homeItemBeforePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_marginStart="10dp"
+                        shenben:strikethrough="@{contentData.beforePrice}" />
+
+                    <TextView
+                        android:id="@+id/homeIsShopCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@{contentData.shopCount}"
+                        android:gravity="end"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
