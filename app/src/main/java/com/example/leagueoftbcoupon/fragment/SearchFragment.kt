@@ -198,7 +198,7 @@ class SearchFragment : BaseViewModelFragment<SearchViewModel>(),
                             if (v.text.isNotEmpty()) {
                                 KeypadUtil.hideKeypad(searchInputKeyEd)
                                 currentViewModel.getSearchDataList(v.text.toString())
-                                searchContentRv.scrollToPosition(0)
+                                successBinding.searchContentRv.scrollToPosition(0)
                                 currentViewModel.getSearchHistory()
                                 successBinding.searchFlowContainer.visibility = View.GONE
                                 successBinding.searchSmart.visibility = View.VISIBLE

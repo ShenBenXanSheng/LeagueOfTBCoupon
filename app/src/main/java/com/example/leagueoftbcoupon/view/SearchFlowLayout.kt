@@ -35,6 +35,7 @@ class SearchFlowLayout : ViewGroup {
             linesList.clear()
             lines = mutableListOf()
             linesList.add(lines)
+
             for (i in 0 until childCount) {
                 val childAt = getChildAt(i)
                 if (childAt.visibility != View.GONE) {
