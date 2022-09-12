@@ -23,6 +23,7 @@ class ShopCarViewModel(application: Application) : AndroidViewModel(application)
         ShopCarRepository(application.applicationContext)
     }
     val queryShopList = MutableLiveData<List<ShopCarData>>()
+
     fun getShopCarDao(): ShopCarDao {
         return shopCarRepository.getShopDao()
     }

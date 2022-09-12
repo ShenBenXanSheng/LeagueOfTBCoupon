@@ -27,6 +27,7 @@ import com.example.leagueoftbcoupon.databinding.FragmentSearchBinding
 import com.example.leagueoftbcoupon.databinding.FragmentSearchSuccessBinding
 import com.example.leagueoftbcoupon.domain.BaseData
 import com.example.leagueoftbcoupon.domain.dataBean.HandlerTicketData
+import com.example.leagueoftbcoupon.room.ShopCarData
 import com.example.leagueoftbcoupon.utils.KeypadUtil
 import com.example.leagueoftbcoupon.view.SearchFlowLayout
 import com.example.leagueoftbcoupon.view.ShopCarDialog
@@ -153,6 +154,7 @@ class SearchFragment : BaseViewModelFragment<SearchViewModel>(),
             }
 
             searchDataList.observe(this@SearchFragment) {
+
                 if (it.isNotEmpty()) {
                     searchAdapter.setData(it)
                 }
@@ -192,7 +194,7 @@ class SearchFragment : BaseViewModelFragment<SearchViewModel>(),
                     override fun onEditorAction(
                         v: TextView?,
                         actionId: Int,
-                        event: KeyEvent?
+                        event: KeyEvent?,
                     ): Boolean {
                         if (v != null) {
                             if (v.text.isNotEmpty()) {
@@ -217,7 +219,7 @@ class SearchFragment : BaseViewModelFragment<SearchViewModel>(),
                         s: CharSequence?,
                         start: Int,
                         count: Int,
-                        after: Int
+                        after: Int,
                     ) {
 
                     }
@@ -227,7 +229,7 @@ class SearchFragment : BaseViewModelFragment<SearchViewModel>(),
                         s: CharSequence?,
                         start: Int,
                         before: Int,
-                        count: Int
+                        count: Int,
                     ) {
                         if (s != null) {
                             if (s.isNotEmpty()) {
@@ -306,13 +308,27 @@ class SearchFragment : BaseViewModelFragment<SearchViewModel>(),
             override fun onItemLongClickListener(baseData: BaseData) {
                 shopCarDialog.apply {
 
-
                     if (shopCarTitleList.size == 0) {
                         updateAddShopCarState(ShopCarDialog.AddShopCarState.ADD)
                         setOnAddShopCarClickListener(object :
                             ShopCarDialog.OnAddShopCarClickListener {
                             override fun onAddShopCarClick() {
-                                shopCarViewModel.insertShopCarData(baseData)
+                                if (baseData.couponClickUrl.isBlank()) {
+                                    val shopCarData = ShopCarData(baseData.title,
+                                        baseData.zkFinalPrice,
+                                        baseData.pictUrl,
+                                        baseData.couponAmount,
+                                        baseData.volume,
+                                        baseData.clickUrl,
+                                        baseData.clickUrl)
+
+                                    shopCarViewModel.insertShopCarData(shopCarData)
+
+                                } else {
+                                    shopCarViewModel.insertShopCarData(baseData)
+                                }
+
+                                Toast.makeText(requireContext(),"添加成功",Toast.LENGTH_SHORT).show()
                             }
 
                         })
@@ -322,7 +338,23 @@ class SearchFragment : BaseViewModelFragment<SearchViewModel>(),
                             setOnAddShopCarClickListener(object :
                                 ShopCarDialog.OnAddShopCarClickListener {
                                 override fun onAddShopCarClick() {
-                                    shopCarViewModel.insertShopCarData(baseData)
+
+                                    if (baseData.couponClickUrl.isBlank()) {
+                                        val shopCarData = ShopCarData(baseData.title,
+                                            baseData.zkFinalPrice,
+                                            baseData.pictUrl,
+                                            baseData.couponAmount,
+                                            baseData.volume,
+                                            baseData.clickUrl,
+                                            baseData.clickUrl)
+
+                                        shopCarViewModel.insertShopCarData(shopCarData)
+
+                                    } else {
+                                        shopCarViewModel.insertShopCarData(baseData)
+                                    }
+
+                                    Toast.makeText(requireContext(),"添加成功",Toast.LENGTH_SHORT).show()
                                 }
 
                             })
