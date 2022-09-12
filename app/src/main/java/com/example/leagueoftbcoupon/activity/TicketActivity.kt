@@ -3,6 +3,7 @@ package com.example.leagueoftbcoupon.activity
 import android.content.*
 import android.content.pm.PackageManager
 import android.os.Build
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
@@ -125,7 +126,8 @@ class TicketActivity : BaseViewModelActivity<TicketViewModel>() {
         currentViewModel.ticketData.observe(this) {
             //  println(it.picUrl)
             successDataBinding.apply {
-                val ticketModel = it.substring(it.indexOf('￥'), it.indexOf(' '))
+                val ticketModel = it.substring(0, it.indexOf('h'))
+                Log.d("优惠码",":${it}")
                 ticketTv.text = ticketModel
             }
 
