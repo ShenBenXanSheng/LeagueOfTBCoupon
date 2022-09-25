@@ -18,10 +18,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ShopCarActivity"
+            android:name=".activity.ShopCarActivity"
             android:exported="false" />
         <activity
-            android:name=".TicketActivity"
+            android:name=".activity.TicketActivity"
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
@@ -32,8 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.TicketActivity" />
-        <activity android:name=".activity.ShopCarActivity" />
+
     </application>
 
 </manifest>
