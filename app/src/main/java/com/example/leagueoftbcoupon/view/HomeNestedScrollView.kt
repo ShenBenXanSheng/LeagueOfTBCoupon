@@ -2,6 +2,7 @@ package com.example.leagueoftbcoupon.view
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import androidx.core.widget.NestedScrollView
 import com.example.leagueoftbcoupon.R
@@ -65,6 +66,30 @@ class HomeNestedScrollView : NestedScrollView {
         this.isScrollSize = t
 
         super.onScrollChanged(l, t, oldl, oldt)
+    }
+
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        when (ev?.action) {
+            MotionEvent.ACTION_DOWN -> {
+                parent.requestDisallowInterceptTouchEvent(true)
+            }
+
+            MotionEvent.ACTION_MOVE->{
+                if (isScrollSize == 0){
+                    parent.requestDisallowInterceptTouchEvent(false)
+                }else{
+                    parent.requestDisallowInterceptTouchEvent(true)
+                }
+            }
+
+            MotionEvent.ACTION_UP->{
+                parent.requestDisallowInterceptTouchEvent(true)
+            }
+            else -> {}
+        }
+
+        return super.dispatchTouchEvent(ev)
     }
     //获取刷新布局，将嵌套滚动，可以加载关闭
     fun getSmart(root: View) {

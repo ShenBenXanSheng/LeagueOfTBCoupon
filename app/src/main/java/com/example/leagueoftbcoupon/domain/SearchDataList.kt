@@ -1,5 +1,6 @@
 package com.example.leagueoftbcoupon.domain
 
+
 import com.google.gson.annotations.SerializedName
 
 class SearchDataList {
@@ -70,13 +71,9 @@ class SearchDataList {
         @SerializedName("item_description")
         val itemDescription: String,
         @SerializedName("item_id")
-        val itemId: Long,
+        val itemId: String,
         @SerializedName("item_url")
         val itemUrl: String,
-        @SerializedName("jdd_num")
-        val jddNum: Int,
-        @SerializedName("jdd_price")
-        val jddPrice: Any,
         @SerializedName("level_one_category_id")
         val levelOneCategoryId: Int,
         @SerializedName("level_one_category_name")
@@ -84,11 +81,7 @@ class SearchDataList {
         @SerializedName("nick")
         val nick: String,
         @SerializedName("num_iid")
-        val numIid: Long,
-        @SerializedName("oetime")
-        val oetime: Any,
-        @SerializedName("ostime")
-        val ostime: Any,
+        val numIid: String,
         @SerializedName("pict_url")
         override val pictUrl: String,
         @SerializedName("presale_deposit")
@@ -117,6 +110,8 @@ class SearchDataList {
         val shortTitle: String,
         @SerializedName("small_images")
         val smallImages: SmallImages,
+        @SerializedName("superior_brand")
+        val superiorBrand: String,
         @SerializedName("title")
         override val title: String,
         @SerializedName("tk_total_commi")
@@ -134,9 +129,7 @@ class SearchDataList {
         @SerializedName("x_id")
         val xId: String,
         @SerializedName("zk_final_price")
-        override val zkFinalPrice: String,
-
-
+        override val zkFinalPrice: String
         ) : BaseData
 
     data class SmallImages(

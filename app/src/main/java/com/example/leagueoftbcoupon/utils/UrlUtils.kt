@@ -17,11 +17,12 @@ object UrlUtils {
         }
     }
 
+    //废弃
     fun getSelectedDataUrl(categoryId: Int): String {
         return "https://api.sunofbeaches.com/shop/recommend/${categoryId}"
     }
 
     fun getOnSellDataUrl(page: Int): String {
-        return "https://api.sunofbeaches.com/shop/onSell/${page}"
+        return "https://shop.sunofbeach.net/union/shop/onSell/${page}"
     }
 }

@@ -4,9 +4,9 @@
     android:title="首页"
     android:icon="@mipmap/home_normal" />
 
-    <item android:id="@+id/fragment_selected"
-        android:title="精选"
-        android:icon="@mipmap/select_normal" />
+<!--    <item android:id="@+id/fragment_selected"-->
+<!--        android:title="精选"-->
+<!--        android:icon="@mipmap/select_normal" />-->
 
     <item android:id="@+id/fragment_on_sell"
         android:title="特惠"

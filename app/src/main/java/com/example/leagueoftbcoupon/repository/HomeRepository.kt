@@ -9,6 +9,7 @@ import com.example.leagueoftbcoupon.retrofit.RetrofitClient
  */
 class HomeRepository {
     suspend fun getCategoryData() = RetrofitClient.api.getHomeCategories()
+
     suspend fun getContentData(categoryId: Int, page: Int) =
         RetrofitClient.api.getHomeContent(categoryId, page)
 }

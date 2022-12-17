@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                R.id.fragment_selected->{
-                    fragmentContainer.navigate(R.id.fragment_selected)
-                }
+//                R.id.fragment_selected->{
+//                    fragmentContainer.navigate(R.id.fragment_selected)
+//                }
 
                 R.id.fragment_on_sell->{
                     fragmentContainer.navigate(R.id.fragment_on_sell)

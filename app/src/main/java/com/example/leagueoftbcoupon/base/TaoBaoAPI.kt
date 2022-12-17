@@ -23,9 +23,12 @@ interface TaoBaoAPI {
     @POST("tpwd")
     suspend fun getTicket(@Body ticketNeedData: TicketNeedData): TicketList.TicketData
 
+
+    //废弃
     @GET("recommend/categories")
     suspend fun getSelectedCategories(): SelectedCategories.Categories
 
+    //废弃
     @GET
     suspend fun getSelectedData(@Url selectedDataUrl: String): SelectedDataList.SelectedData
 

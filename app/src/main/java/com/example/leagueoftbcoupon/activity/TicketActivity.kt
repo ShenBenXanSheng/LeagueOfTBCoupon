@@ -124,9 +124,9 @@ class TicketActivity : BaseViewModelActivity<TicketViewModel>() {
         super.initDataListener()
 
         currentViewModel.ticketData.observe(this) {
-            //  println(it.picUrl)
+
             successDataBinding.apply {
-                val ticketModel = it.substring(0, it.indexOf('h'))
+                val ticketModel = it.substring(2, it.indexOf('h'))
                 Log.d("优惠码",":${it}")
                 ticketTv.text = ticketModel
             }

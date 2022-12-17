@@ -7,9 +7,9 @@
     <fragment
         android:id="@+id/fragment_home"
         android:name="com.example.leagueoftbcoupon.fragment.HomeFragment">
-        <action
-            android:id="@+id/home_to_search"
-            app:destination="@id/fragment_selected" />
+<!--        <action-->
+<!--            android:id="@+id/home_to_search"-->
+<!--            app:destination="@id/fragment_selected" />-->
 
         <action
             android:id="@+id/home_to_ticket"
@@ -19,17 +19,17 @@
             app:destination="@+id/activity_shop_car" />
     </fragment>
 
-    <fragment
-        android:id="@+id/fragment_selected"
-        android:name="com.example.leagueoftbcoupon.fragment.SelectedFragment">
+<!--    <fragment-->
+<!--        android:id="@+id/fragment_selected"-->
+<!--        android:name="com.example.leagueoftbcoupon.fragment.SelectedFragment">-->
 
-        <action
-            android:id="@+id/selected_to_ticket"
-            app:destination="@id/activity_ticket" />
-        <action
-            android:id="@+id/selected_to_shop"
-            app:destination="@+id/activity_shop_car" />
-    </fragment>
+<!--        <action-->
+<!--            android:id="@+id/selected_to_ticket"-->
+<!--            app:destination="@id/activity_ticket" />-->
+<!--        <action-->
+<!--            android:id="@+id/selected_to_shop"-->
+<!--            app:destination="@+id/activity_shop_car" />-->
+<!--    </fragment>-->
     <fragment
         android:id="@+id/fragment_on_sell"
         android:name="com.example.leagueoftbcoupon.fragment.OnSellFragment" />

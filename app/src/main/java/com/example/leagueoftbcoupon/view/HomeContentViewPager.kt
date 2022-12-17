@@ -62,32 +62,7 @@ class HomeContentViewPager : ViewPager {
         return super.dispatchTouchEvent(ev)
     }
 
-//    var downX = 0f
-//    var downY = 0f
-//    override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
-//        if (ev != null) {
-//            when (ev.action) {
-//                MotionEvent.ACTION_DOWN -> {
-//                    downX = ev.x
-//                    downY = ev.y
-//                }
-//
-//                MotionEvent.ACTION_MOVE -> {
-//                    val moveX = ev.x
-//                    val moveY = ev.y
-//                    if (abs(downX - moveX) > abs(downY - moveY)) {
-//                        return true
-//                    } else {
-//                        return false
-//                    }
-//                }
-//                MotionEvent.ACTION_UP->{
-//                    return false
-//                }
-//            }
-//        }
-//        return super.onInterceptTouchEvent(ev)
-//    }
+
 
     //处理轮播图的自动轮播
     @SuppressLint("ClickableViewAccessibility")

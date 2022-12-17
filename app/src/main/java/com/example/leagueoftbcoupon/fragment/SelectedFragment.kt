@@ -31,6 +31,8 @@ import kotlinx.coroutines.DelicateCoroutinesApi
  * 什本先生
  * 2022年5月27日
  * 精选界面
+ *
+ * 接口崩溃，该页面已经被废弃
  */
 class SelectedFragment : BaseViewModelFragment<SelectedViewModel>() {
     companion object {
@@ -185,10 +187,10 @@ class SelectedFragment : BaseViewModelFragment<SelectedViewModel>() {
 
         rightAdapter.setOnItemClickListener(object : SelectedDataAdapter.OnItemClickListener {
             override fun onItemClickListener(data: BaseData) {
-                val handleTickNeedData = HandlerTicketData.handleTickNeedData(data)
-                val bundle = Bundle()
-                bundle.putParcelable(Constant.ITEM_CLICK_DATA, handleTickNeedData)
-                findNavController().navigate(R.id.selected_to_ticket, bundle)
+             //   val handleTickNeedData = HandlerTicketData.handleTickNeedData(data)
+             //   val bundle = Bundle()
+             //   bundle.putParcelable(Constant.ITEM_CLICK_DATA, handleTickNeedData)
+             //   findNavController().navigate(R.id.selected_to_ticket, bundle)
             }
 
             override fun onLongItemClickListener(data: BaseData, selectedShopBt: Button) {

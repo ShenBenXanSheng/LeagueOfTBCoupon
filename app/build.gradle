@@ -54,6 +54,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6' //Gson
     implementation 'com.github.bumptech.glide:glide:4.10.0' //glide
     implementation 'com.squareup.retrofit2:retrofit:2.7.0' //retrofit
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
     implementation 'com.squareup.retrofit2:converter-gson:2.7.0' //gsonConverter
 
     
