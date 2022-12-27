@@ -81,9 +81,9 @@ class OnSellDataList {
         @SerializedName("title")
         override val title: String,
         @SerializedName("tmall_play_activity_end_time")
-        val tmallPlayActivityEndTime: Int,
+        val tmallPlayActivityEndTime: Long,
         @SerializedName("tmall_play_activity_start_time")
-        val tmallPlayActivityStartTime: Int,
+        val tmallPlayActivityStartTime: Long,
         @SerializedName("user_type")
         val userType: Int,
         @SerializedName("volume")
